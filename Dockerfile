@@ -1,4 +1,4 @@
-FROM openjdk:23-jdk
+FROM openjdk:21-alpine
 EXPOSE 8761
 ADD target/eureka-0.0.1-SNAPSHOT.jar eureka-server.jar
 ENTRYPOINT ["java", "-jar", "/eureka-server.jar"]
