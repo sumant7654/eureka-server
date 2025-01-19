@@ -31,6 +31,13 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Build Docker Image
       run: docker build -t eureka-server .
+    - name: Login into Docker Hub
+      run: docker/login-action@v2
+      with:
+        username: ${{secret.DOCKER_USERNAME}}
+        password: ${{secret.DOCKER_PASSWORD}}
+    - name: Push Docker Image
+      run: docker push sumant7654/eureka-service
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
