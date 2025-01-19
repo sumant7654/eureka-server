@@ -37,7 +37,7 @@ jobs:
         username: ${{secrets.DOCKER_USERNAME}}
         password: ${{secrets.DOCKER_PASSWORD}}
     - name: Push Docker Image
-      run: docker push sumant7654/eureka-service
+      run: docker push sumant7654/eureka-server
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     #- name: Update dependency graph
